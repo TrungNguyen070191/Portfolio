@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var mongoose = require('mongoose'),
+var mongoose = require("mongoose"),
   Schema = mongoose.Schema;
 
 /**
@@ -31,3 +31,7 @@ var PostSchema = new Schema({
   ],
   createdDate: { type: Date, default: Date.now }
 });
+
+var PostModel = mongoose.model("Post", PostSchema);
+
+module.exports = PostModel;
