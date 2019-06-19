@@ -1,3 +1,16 @@
 <div class="component-content-full">
   blog list
 </div>
+<select [(ngModel)]="filterCategory">
+    <option value="hocNghe">Học Nghề</option>
+    <option value="gayNghiep">Gây Nghiệp</option>
+  </select>
+<div *ngFor="let item of blogs" >
+  <div class="blog" *ngIf="GetCategory(item.categoryId)">
+    <h4><a href="">{{item.title}}</a></h4>
+  
+    <div>{{item.shortDescription}}</div>
+    <div>{{item.userId}}</div>
+    <div>{{item.createdDate}}</div>
+  </div>
+</div>
