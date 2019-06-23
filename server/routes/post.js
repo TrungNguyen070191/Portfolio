@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
-
-const postController = require("../controllers/postController"),
-  multer = require("multer"),
+const postController = require("../controllers/postController");
+const multer = require("multer"),
   MIME_TYPE_MAP = {
     "image/png": "png",
     "image/jpeg": "jpeg",
@@ -27,12 +26,12 @@ const postController = require("../controllers/postController"),
       cb(null, name + "-" + Date.now() + "." + ext);
     }
   }),
-  cpUpload = multer({ storage: storage }).fields([{ name: "mainImage", maxCount: 1 }, { name: "imgList", maxCount: 8 }]);
-
-// cpUpload = multer({ storage: storage }).single("mainImage");
+  // cpUpload = multer({ storage: storage }).fields([{ name: "mainImage", maxCount: 1 }, { name: "imgList", maxCount: 8 }]);
+  cpUpload = multer({ storage: storage }).single("image");
 
 router.get("/getAllPosts", userController.IsAuthenticated, postController.GetAllPost);
-router.post("/addPost", userController.IsAuthenticated, cpUpload, postController.AddPost);
+router.post("/addPost", userController.IsAuthenticated, postController.AddPost);
+router.post("/uploadImage", userController.IsAuthenticated, cpUpload, postController.uploadImage);
 
 module.exports = router;
 

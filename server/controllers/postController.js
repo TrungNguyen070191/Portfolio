@@ -18,22 +18,23 @@ exports.GetAllPost = async (req, res) => {
   return true;
 };
 
+exports.uploadImage = async (req, res) => {
+  const url = req.protocol + "://" + req.get("host");
+  const imagePath = url + "/assets/images/" + req.file.filename;
+  res.end(
+    res.status(201).json({
+      message: "Image add success",
+      imagePath: imagePath
+    })
+  );
+  console.log("Running Upload Image()");
+  return true;
+};
+
 /**
  * Add post
  */
 exports.AddPost = async (req, res) => {
-  const url = req.protocol + "://" + req.get("host");
-  req.body.mainImage = url + "/assets/images/" + req.files["mainImage"][0].filename;
-  if (req.body.imgList) {
-    req.body.imgList = req.imgList.map(image, index => {
-      return {
-        description: image.description,
-        contentType: image.contentType,
-        imgPath: url + "/assets/images" + req.files["imgList"][index].filename,
-        title: image.title
-      };
-    });
-  }
   let result = await postRepo.AddNewAsync(req.body);
   if (result === null || result === undefined) {
     res.end("Add post is not working!");
