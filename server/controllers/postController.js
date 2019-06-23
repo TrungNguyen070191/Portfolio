@@ -1,5 +1,5 @@
 "use strict";
-var Post = require("../models/post"),
+var Post = require("../models/postModel"),
   PostRepository = require("../repositories/postRepository"),
   postRepo = new PostRepository(),
   errors = require("../common/errorMessage");
@@ -23,16 +23,18 @@ exports.GetAllPost = async (req, res) => {
  */
 exports.AddPost = async (req, res) => {
   const url = req.protocol + "://" + req.get("host");
-  req.body.mainImage = url + "/assets/images" + req.files["mainImage"][0].filename;
-  req.body.imgList = req.imgList.map(image, index => {
-    return {
-      description: image.description,
-      contentType: image.contentType,
-      imgPath: url + "/assets/images" + req.files["imgList"][index].filename,
-      title: image.title
-    };
-  });
-  let result = await postRepo.AddNewAsync(post);
+  req.body.mainImage = url + "/assets/images/" + req.files["mainImage"][0].filename;
+  if (req.body.imgList) {
+    req.body.imgList = req.imgList.map(image, index => {
+      return {
+        description: image.description,
+        contentType: image.contentType,
+        imgPath: url + "/assets/images" + req.files["imgList"][index].filename,
+        title: image.title
+      };
+    });
+  }
+  let result = await postRepo.AddNewAsync(req.body);
   if (result === null || result === undefined) {
     res.end("Add post is not working!");
     return false;
@@ -41,10 +43,3 @@ exports.AddPost = async (req, res) => {
   console.log("Running Add Post()");
   return true;
 };
-
-// exports.AddPost = async (req, res) => {
-//   const url = req.protocol + "://" + req.get("host");
-//   // req.body.mainImage = url + "/assets/images" + req.files["mainImage"][0].filename;
-//   req.body.mainImage = url + "/assets/images" + req.file.filename;
-//   console.log(req.body.mainImage);
-// };
