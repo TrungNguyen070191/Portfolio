@@ -1,0 +1,13 @@
+{
+  "information": {
+    "logoImgPath": "/backend/images/home/logo-img.png",
+    "headerImgPath": "/backend/images/home/header-img.png",
+    "aboutusImgPath": "/backend/images/home/about-us-img.png",
+    "projectImgPath": "/backend/images/home/project-img.png",
+    "tekbarGroupImgPath": "/backend/images/home/tekbar-group-img.png",
+    "slogan": "The TEKBAR",
+    "aboutUs": "Những thanh niên lầy của xã hội :))",
+    "description": "asdsad",
+    "createdDate": "2019-06-09T08:06:47+00:00"
+  }
+}

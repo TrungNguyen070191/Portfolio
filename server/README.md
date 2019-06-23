@@ -25,9 +25,14 @@ npm install -g nodemon
 
 ** How to test server???
 1. Right click server folder and choose 'Open In Terminal'.
-2. Run command 'node server.js' for old version or 'node api.js' for new version.
+2. Run command 'node server.js' for old version (or 'node api.js' for new version).
 3. Open Postman application and test api.
 
+
+** MongoDb Cloud
+link: https://www.mongodb.com/cloud
+username: trungdev1991@gmail.com    
+password: Assange@123
 
 ** APIs
 
