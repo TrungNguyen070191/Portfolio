@@ -1,45 +1,93 @@
-{
-  "categoryId": "okokcocec",
-  "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
-  "title": "10 bước để tạo bài blog sinh động",
-  "shortDescription": "asdsdsad",
-  "tags": [
-    "music",
-    "sex"
-  ],
-  "mainImage": "/backend/images/posts/atc01.png",
-  "imgList": [
+[
     {
-      "description": "",
-      "contentType": "header",
-      "imgPath": "/backend/images/posts/atc01.png",
-      "title": "Header image"
-    },
-    {
-      "description": "",
-      "contentType": "article",
-      "imgPath": "/backend/images/posts/atc01.png",
-      "title": "article image No. 1"
-    },
-    {
-      "description": "",
-      "contentType": "article",
-      "imgPath": "/wp-content/themes/mcl/images/atc02.png",
-      "title": "article image No. 2"
-    }
-  ],
-  "content": "Bước 1: chuẩn bị hình ảnh sinh động, trực quan,...",
-  "comments": [
-    {
-      "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
-      "createdDate": "2019-06-09T08:06:47+00:00",
-      "text": "Bai viet hay qua"
-    },
-    {
-      "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
-      "createdDate": "2019-06-09T08:06:47+00:00",
-      "text": "Co y nghia"
-    }
-  ],
-  "createdDate": "2019-06-09T08:06:47+00:00"
-}
+    "categoryId": "hocNghe",
+    "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+    "title": "Luis Enrique từ chức HLV trưởng tuyển Tây Ban Nha",
+    "shortDescription": "Cựu huấn luyện viên của Barcelona đưa ra lý do từ chức là những vấn đề cá nhân. Trong khi đó, trợ lý Robert Moreno sẽ tạm thời thay thế ông ở đội tuyển Tây Ban Nha.",
+    "tags": [
+      "music",
+      "sex"
+    ],
+    "mainImage": "/backend/images/posts/atc01.png",
+    "imgList": [
+      {
+        "description": "",
+        "contentType": "header",
+        "imgPath": "/backend/images/posts/atc01.png",
+        "title": "Header image"
+      },
+      {
+        "description": "",
+        "contentType": "article",
+        "imgPath": "/backend/images/posts/atc01.png",
+        "title": "article image No. 1"
+      },
+      {
+        "description": "",
+        "contentType": "article",
+        "imgPath": "/wp-content/themes/mcl/images/atc02.png",
+        "title": "article image No. 2"
+      }
+    ],
+    "content": "Bước 1: chuẩn bị hình ảnh sinh động, trực quan,...",
+    "comments": [
+      {
+        "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+        "createdDate": "2019-06-09T08:06:47+00:00",
+        "text": "Bai viet hay qua"
+      },
+      {
+        "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+        "createdDate": "2019-06-09T08:06:47+00:00",
+        "text": "Co y nghia"
+      }
+    ],
+    "createdDate": "2019-06-09T08:06:47+00:00"
+  },
+
+  {
+    "categoryId": "gayNghiep",
+    "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+    "title": "Lãnh đạo VFF nói gì về việc gia hạn hợp đồng với thầy Park?",
+    "shortDescription": "Lãnh đạo Liên đoàn Bóng đá Việt Nam cho biết đang xúc tiến triển khai đàm phán hợp đồng mới với HLV Park Hang-seo theo tiêu chí hài hòa lợi ích cả hai bên.",
+    "tags": [
+      "music",
+      "sex"
+    ],
+    "mainImage": "/backend/images/posts/atc01.png",
+    "imgList": [
+      {
+        "description": "",
+        "contentType": "header",
+        "imgPath": "/backend/images/posts/atc01.png",
+        "title": "Header image"
+      },
+      {
+        "description": "",
+        "contentType": "article",
+        "imgPath": "/backend/images/posts/atc01.png",
+        "title": "article image No. 1"
+      },
+      {
+        "description": "",
+        "contentType": "article",
+        "imgPath": "/wp-content/themes/mcl/images/atc02.png",
+        "title": "article image No. 2"
+      }
+    ],
+    "content": "Bước 1: chuẩn bị hình ảnh sinh động, trực quan,...",
+    "comments": [
+      {
+        "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+        "createdDate": "2019-06-09T08:06:47+00:00",
+        "text": "Bai viet hay qua"
+      },
+      {
+        "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+        "createdDate": "2019-06-09T08:06:47+00:00",
+        "text": "Co y nghia"
+      }
+    ],
+    "createdDate": "2019-06-09T08:06:47+00:00"
+  }
+]
