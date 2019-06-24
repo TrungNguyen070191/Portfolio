@@ -8,7 +8,9 @@ import { GetBlogDetailsService } from '@providers/services';
 })
 export class BlogListComponent {
   title = 'films-synopsys';
+  filterCategory = 'hocNghe'
   blogs;
+  keys;
 
   constructor(private getBlogDetailService: GetBlogDetailsService) { }
 
@@ -23,6 +25,28 @@ export class BlogListComponent {
   GetBlogList() {
     if (this.blogs) {
       console.log(this.blogs);
+
+      this.keys = Object.keys(this.blogs)
+
+      console.log(this.keys);
+      console.log(this.filterCategory);
+    }
+
+    }
+  GetCategory(categoryId : string){
+    const gayNghiep = this.filterCategory ==='gayNghiep' && categoryId ==='gayNghiep';
+    const hocNghe = this.filterCategory ==='hocNghe'&& categoryId ==='hocNghe';
+    return gayNghiep || hocNghe;
+  }
+  ShowCategoty(e : string){
+    if (e === 'gayNghiep')
+    {
+      this.filterCategory = 'gayNghiep';
+    }
+    else
+    {
+      this.filterCategory = 'hocNghe';
+    }
     }
   }
-}
+
