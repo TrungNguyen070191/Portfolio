@@ -29,6 +29,7 @@ export class BlogListComponent {
       this.keys = Object.keys(this.blogs)
 
       console.log(this.keys);
+      console.log(this.filterCategory);
     }
 
     }
@@ -37,4 +38,15 @@ export class BlogListComponent {
     const hocNghe = this.filterCategory ==='hocNghe'&& categoryId ==='hocNghe';
     return gayNghiep || hocNghe;
   }
-}
+  ShowCategoty(e : string){
+    if (e === 'gayNghiep')
+    {
+      this.filterCategory = 'gayNghiep';
+    }
+    else
+    {
+      this.filterCategory = 'hocNghe';
+    }
+    }
+  }
+
