@@ -19,6 +19,7 @@ export class BlogListComponent {
     this.getBlogDetailService.getJSON()
       .subscribe(res => {
         this.blogs = res;
+        this.blogs.sort((a, b) => new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime());
         this.GetBlogList();
       });
   }
@@ -27,9 +28,7 @@ export class BlogListComponent {
   {
     if (this.blogs) {
       console.log(this.blogs);
-
       this.keys = Object.keys(this.blogs)
-
       console.log(this.keys);
       console.log(this.filterCategory);
     }
