@@ -8,13 +8,14 @@ import { GetBlogDetailsService } from '@providers/services';
 })
 export class BlogListComponent {
   title = 'films-synopsys';
-  filterCategory = 'hocNghe'
+  filterCategory = 'showAll'
   blogs;
   keys;
 
   constructor(private getBlogDetailService: GetBlogDetailsService) { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
     this.getBlogDetailService.getJSON()
       .subscribe(res => {
         this.blogs = res;
@@ -22,7 +23,8 @@ export class BlogListComponent {
       });
   }
 
-  GetBlogList() {
+  GetBlogList() 
+  {
     if (this.blogs) {
       console.log(this.blogs);
 
@@ -32,21 +34,29 @@ export class BlogListComponent {
       console.log(this.filterCategory);
     }
 
-    }
-  GetCategory(categoryId : string){
+  }
+  GetCategory(categoryId : string)
+  {
+    const showAll =  this.filterCategory === 'showAll';
     const gayNghiep = this.filterCategory ==='gayNghiep' && categoryId ==='gayNghiep';
     const hocNghe = this.filterCategory ==='hocNghe'&& categoryId ==='hocNghe';
-    return gayNghiep || hocNghe;
+    return gayNghiep || hocNghe ||showAll;
   }
-  ShowCategoty(e : string){
-    if (e === 'gayNghiep')
-    {
-      this.filterCategory = 'gayNghiep';
-    }
-    else
-    {
-      this.filterCategory = 'hocNghe';
-    }
-    }
+
+  ShowCategoty(e : string)
+  {
+      if (e === 'gayNghiep')
+      {
+        this.filterCategory = 'gayNghiep';
+      }
+      else if(e === 'hocNghe')
+      {
+        this.filterCategory = 'hocNghe';
+      }
+      else
+      {
+        this.filterCategory = 'showAll';
+      }
   }
+}
 

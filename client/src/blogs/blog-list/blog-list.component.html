@@ -5,9 +5,9 @@
     <option value="hocNghe">Học Nghề</option>
     <option value="gayNghiep">Gây Nghiệp</option>
   </select> -->
-
-  <button  (click)="ShowCategoty('hocNghe')"> Hoc Nghe</button>
-  <button (click)="ShowCategoty('gayNghiep')"> Gay Nghiep</button>
+  <button (click)="ShowCategoty('showAll')">Học Nghề Gây Nghiệp</button>
+  <button (click)="ShowCategoty('hocNghe')">Học Nghề</button>
+  <button (click)="ShowCategoty('gayNghiep')">Gây Nghiệp</button>
 <div *ngFor="let item of blogs" >
   <div class="blog" *ngIf="GetCategory(item.categoryId)">
     <h4><a href="">{{item.title}}</a></h4>
