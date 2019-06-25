@@ -1,15 +1,15 @@
-import { GetBlogDetailsService } from './get-blog-details.service';
+import { BlogService } from './blog.service';
 import { TypeConfig } from '@providers/models/type-config';
 
 export const allServices = [
-    GetBlogDetailsService
+    BlogService
 ];
 
 export const allServiceTypeConfigs: TypeConfig[] = [
     {
         name: 'getBlogDetailsService',
-        type: GetBlogDetailsService
+        type: BlogService
     }
 ];
 
-export * from './get-blog-details.service';
+export * from './blog.service';
