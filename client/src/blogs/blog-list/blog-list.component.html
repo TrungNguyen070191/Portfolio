@@ -1,10 +1,10 @@
 <div class="component-content-full">
   blog list
 </div>
-  <button (click)="ShowCategoty('showAll')">Học Nghề Gây Nghiệp</button>
-  <button (click)="ShowCategoty('hocNghe')">Học Nghề</button>
-  <button (click)="ShowCategoty('gayNghiep')">Gây Nghiệp</button>
-<div *ngFor="let item of blogs" >
+<button (click)="ShowCategoty('showAll')">Học Nghề Gây Nghiệp</button>
+<button (click)="ShowCategoty('hocNghe')">Học Nghề</button>
+<button (click)="ShowCategoty('gayNghiep')">Gây Nghiệp</button>
+<div *ngFor="let item of blogs">
   <div class="blog" *ngIf="GetCategory(item.categoryId)">
     <h4><a href="">{{item.title}}</a></h4>
     <img src="{{item.mainImage}}" alt="">

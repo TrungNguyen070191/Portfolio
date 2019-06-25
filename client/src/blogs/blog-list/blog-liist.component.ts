@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GetBlogDetailsService } from '@providers/services';
 
 @Component({
@@ -6,16 +6,15 @@ import { GetBlogDetailsService } from '@providers/services';
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.scss']
 })
-export class BlogListComponent {
+export class BlogListComponent implements OnInit {
   title = 'films-synopsys';
-  filterCategory = 'showAll'
+  filterCategory = 'showAll';
   blogs;
   keys;
 
   constructor(private getBlogDetailService: GetBlogDetailsService) { }
 
-  ngOnInit()
-  {
+  ngOnInit() {
     this.getBlogDetailService.getJSON()
       .subscribe(res => {
         this.blogs = res;
@@ -24,8 +23,7 @@ export class BlogListComponent {
       });
   }
 
-  GetBlogList() 
-  {
+  GetBlogList() {
     if (this.blogs) {
       console.log(this.blogs);
       this.keys = Object.keys(this.blogs)
@@ -34,28 +32,21 @@ export class BlogListComponent {
     }
 
   }
-  GetCategory(categoryId : string)
-  {
-    const showAll =  this.filterCategory === 'showAll';
-    const gayNghiep = this.filterCategory ==='gayNghiep' && categoryId ==='gayNghiep';
-    const hocNghe = this.filterCategory ==='hocNghe'&& categoryId ==='hocNghe';
-    return gayNghiep || hocNghe ||showAll;
+  GetCategory(categoryId: string) {
+    const showAll = this.filterCategory === 'showAll';
+    const gayNghiep = this.filterCategory === 'gayNghiep' && categoryId === 'gayNghiep';
+    const hocNghe = this.filterCategory === 'hocNghe' && categoryId === 'hocNghe';
+    return gayNghiep || hocNghe || showAll;
   }
 
-  ShowCategoty(e : string)
-  {
-      if (e === 'gayNghiep')
-      {
-        this.filterCategory = 'gayNghiep';
-      }
-      else if(e === 'hocNghe')
-      {
-        this.filterCategory = 'hocNghe';
-      }
-      else
-      {
-        this.filterCategory = 'showAll';
-      }
+  ShowCategoty(e: string) {
+    if (e === 'gayNghiep') {
+      this.filterCategory = 'gayNghiep';
+    } else if (e === 'hocNghe') {
+      this.filterCategory = 'hocNghe';
+    } else {
+      this.filterCategory = 'showAll';
+    }
   }
 }
 
