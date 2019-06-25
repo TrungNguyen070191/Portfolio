@@ -33,7 +33,7 @@
     "comments": [
       {
         "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
-        "createdDate": "2019-06-09T08:06:47+00:00",
+        "createdDate": "2019-07-09T08:06:47+00:00",
         "text": "Bai viet hay qua"
       },
       {
@@ -42,7 +42,7 @@
         "text": "Co y nghia"
       }
     ],
-    "createdDate": "2019-06-09T08:06:47+00:00"
+    "createdDate": "2019-05-09T08:06:47+00:00"
   },
 
   {
@@ -89,5 +89,51 @@
       }
     ],
     "createdDate": "2019-06-09T08:06:47+00:00"
+  },
+
+  {
+    "categoryId": "gayNghiep",
+    "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+    "title": "MV ca khúc mới của Sơn Tùng M-TP ngập tràn cảnh mỹ nhân khoe ngực",
+    "shortDescription": "Tối 24/6, Sơn Tùng M-TP tung teaser ca khúc mới Hãy trao cho anh. Chỉ vỏn vẹn chưa tới 20 giây nhưng đoạn video đã hé lộ chủ đề chính của sản phẩm là một buổi tiệc mùa hè rực rỡ. Nhiều cảnh được quay ngoài trời với góc rộng.",
+    "tags": [
+      "music",
+      "sex"
+    ],
+    "mainImage": "/backend/images/posts/atc01.png",
+    "imgList": [
+      {
+        "description": "",
+        "contentType": "header",
+        "imgPath": "/backend/images/posts/atc01.png",
+        "title": "Header image"
+      },
+      {
+        "description": "",
+        "contentType": "article",
+        "imgPath": "/backend/images/posts/atc01.png",
+        "title": "article image No. 1"
+      },
+      {
+        "description": "",
+        "contentType": "article",
+        "imgPath": "/wp-content/themes/mcl/images/atc02.png",
+        "title": "article image No. 2"
+      }
+    ],
+    "content": "Bước 1: chuẩn bị hình ảnh sinh động, trực quan,...",
+    "comments": [
+      {
+        "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+        "createdDate": "2019-06-09T08:06:47+00:00",
+        "text": "Bai viet hay qua"
+      },
+      {
+        "userId": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+        "createdDate": "2019-06-09T08:06:47+00:00",
+        "text": "Co y nghia"
+      }
+    ],
+    "createdDate": "2019-10-09T08:06:47+00:00"
   }
 ]
