@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '@providers/services';
 import { Post } from '@providers/models/post';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'tekbar-blog-detail',
@@ -12,11 +12,15 @@ export class BlogDetailComponent implements OnInit {
   currentPost: Post;
   constructor(
     private blogService: BlogService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.currentPost = this.blogService.getCurrentPost();
+    const postId = this.route.snapshot.params.param.split('_')[1];
+    this.blogService.getPostById(postId).subscribe(post => {
+      this.currentPost = post;
+    });
   }
 
   backtoBlogList() {

@@ -55,8 +55,8 @@ export class BlogListComponent implements OnInit {
   }
 
   getPostDetail(post) {
-    this.getBlogDetailService.setCurrentPost(post);
-    this.router.navigate(['/blog-detail']);
+    const title = this.getBlogDetailService.convertVietNamString(post.title);
+    this.router.navigate(['/blog-detail', title + '_' + post.postId]);
   }
 }
 
