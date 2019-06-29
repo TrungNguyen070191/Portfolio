@@ -1,0 +1,12 @@
+<div class="blog" *ngIf="currentPost">
+  <div (click)="backtoBlogList()"> Back to blog list </div>
+  <h4>
+    <div class="title">{{currentPost.title}}</div>
+  </h4>
+  <div class="author">{{currentPost.userName}} - {{currentPost.createdDate  | timeAgo}}</div>
+  <div class="description">{{currentPost.shortDescription}}</div>
+  <div class="comment" *ngFor="let cmt of currentPost.comments">
+    <div class="author-cmt">{{cmt.userName}} - {{cmt.createdDate  | timeAgo}}</div>
+    <div>{{cmt.text}}</div>
+  </div>
+</div>

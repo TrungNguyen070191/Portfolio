@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GetBlogDetailsService } from '@providers/services';
+import { BlogService } from '@providers/services';
+import { Post } from '@providers/models/post';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tekbar-blog-list',
@@ -12,7 +14,10 @@ export class BlogListComponent implements OnInit {
   blogs;
   keys;
 
-  constructor(private getBlogDetailService: GetBlogDetailsService) { }
+  constructor(
+    private getBlogDetailService: BlogService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.getBlogDetailService.getJSON()
@@ -47,6 +52,11 @@ export class BlogListComponent implements OnInit {
     } else {
       this.filterCategory = 'showAll';
     }
+  }
+
+  getPostDetail(post) {
+    const title = this.getBlogDetailService.convertVietNamString(post.title);
+    this.router.navigate(['/blog-detail', title + '_' + post.postId]);
   }
 }
 
