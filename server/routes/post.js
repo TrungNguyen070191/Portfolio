@@ -30,6 +30,8 @@ const multer = require("multer"),
   cpUpload = multer({ storage: storage }).single("image");
 
 router.get("/getAllPosts", userController.IsAuthenticated, postController.GetAllPost);
+router.get("/getPost/:id", postController.GetPostById);
+router.put("/updatePost/:id", postController.UpdatePost);
 router.post("/addPost", userController.IsAuthenticated, postController.AddPost);
 router.post("/uploadImage", userController.IsAuthenticated, cpUpload, postController.uploadImage);
 

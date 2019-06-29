@@ -18,6 +18,9 @@ exports.GetAllPost = async (req, res) => {
   return true;
 };
 
+/**
+ * Upload image
+ */
 exports.uploadImage = async (req, res) => {
   const url = req.protocol + "://" + req.get("host");
   const imagePath = url + "/assets/images/" + req.file.filename;
@@ -35,7 +38,19 @@ exports.uploadImage = async (req, res) => {
  * Add post
  */
 exports.AddPost = async (req, res) => {
-  let result = await postRepo.AddNewAsync(req.body);
+  const post = new Post({
+    categoryId: req.body.categoryId,
+    userId: req.body.userId,
+    title: req.body.title,
+    shortDescription: req.body.shortDescription,
+    shortDescription: req.body.shortDescription,
+    tags: req.body.tags,
+    mainImage: req.body.tags,
+    imgList: req.body.imgList,
+    content: req.body.content,
+    comments: req.body.comments
+  });
+  let result = await postRepo.AddNewAsync(post);
   if (result === null || result === undefined) {
     res.end("Add post is not working!");
     return false;
@@ -43,4 +58,57 @@ exports.AddPost = async (req, res) => {
   res.end(JSON.stringify(result));
   console.log("Running Add Post()");
   return true;
+};
+
+/**
+ * Get Post by Id
+ */
+exports.GetPostById = async (req, res) => {
+  let post = await postRepo.GetPostById(req.params.id);
+  if (post) {
+    res.status(200).json(post);
+  } else {
+    res.status(404).json({ message: "Post not found!" });
+  }
+};
+
+/**
+ * Update Post by Id
+ */
+exports.UpdatePost = async (req, res) => {
+  const post = new Post({
+    _id: req.body.id,
+    categoryId: req.body.categoryId,
+    userId: req.body.userId,
+    title: req.body.title,
+    shortDescription: req.body.shortDescription,
+    shortDescription: req.body.shortDescription,
+    tags: req.body.tags,
+    mainImage: req.body.tags,
+    imgList: req.body.imgList,
+    content: req.body.content,
+    comments: req.body.comments,
+    show: req.body.show
+  });
+  let queue = await postRepo.UpdatePost(req.params.id, post);
+  res.status(200).json("Update complete");
+};
+
+exports.DeletePost = async (req, res) => {
+  const post = new Post({
+    _id: req.body.id,
+    categoryId: req.body.categoryId,
+    userId: req.body.userId,
+    title: req.body.title,
+    shortDescription: req.body.shortDescription,
+    shortDescription: req.body.shortDescription,
+    tags: req.body.tags,
+    mainImage: req.body.tags,
+    imgList: req.body.imgList,
+    content: req.body.content,
+    comments: req.body.comments,
+    show: false
+  });
+  let queue = await postRepo.DeletePost(req.params.id, post);
+  res.status(200).json("Delete complete");
 };
