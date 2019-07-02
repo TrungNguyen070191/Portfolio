@@ -4,8 +4,9 @@ import { BlogListComponent } from '@blogs/blog-list/blog-liist.component';
 import { BlogDetailComponent } from '@blogs/blog-detail/blog-detail.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: '/blogs-list', pathMatch: 'full' },
-  { path: 'blogs-list', component: BlogListComponent }
+  { path: './', redirectTo: '/blogs-list' },
+  { path: 'blogs-list', component: BlogListComponent },
+  { path: 'blog-detail/:param', component: BlogDetailComponent }
 ];
 
 @NgModule({

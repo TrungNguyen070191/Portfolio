@@ -4,6 +4,7 @@ import { Post } from '@providers/models/post';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'tekbar-blog-detail',
   templateUrl: './blog-detail.component.html',
   styleUrls: ['./blog-detail.component.scss']
