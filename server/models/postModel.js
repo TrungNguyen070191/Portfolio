@@ -29,7 +29,8 @@ var PostSchema = new Schema({
       text: { type: String }
     }
   ],
-  createdDate: { type: Date, default: Date.now }
+  createdDate: { type: Date, default: Date.now },
+  show: { type: Boolean, default: true }
 });
 
 var PostModel = mongoose.model("Post", PostSchema);
