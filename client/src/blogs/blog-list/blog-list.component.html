@@ -1,0 +1,17 @@
+<div class="component-content-full">
+  blog list
+</div>
+<button (click)="ShowCategoty('showAll')">Học Nghề Gây Nghiệp</button>
+<button (click)="ShowCategoty('hocNghe')">Học Nghề</button>
+<button (click)="ShowCategoty('gayNghiep')">Gây Nghiệp</button>
+<div *ngFor="let item of blogs">
+  <div class="blog" *ngIf="GetCategory(item.categoryId)" (click)="getPostDetail(item)">
+    <h4>
+      <div>{{item.title}}</div>
+    </h4>
+    <img src="{{item.mainImage}}" alt="">
+    <div>{{item.shortDescription}}</div>
+    <div>{{item.userId}}</div>
+    <div>{{item.createdDate}}</div>
+  </div>
+</div>

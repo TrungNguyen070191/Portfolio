@@ -1,0 +1,53 @@
+{
+    "user": [
+        {
+            "id": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+            "lastName": "Phuong Trinh",
+            "middleName": "",
+            "firstName": "Angela",
+            "dob": "1993-12-31",
+            "email": "trinhangela93@gmail.com",
+            "phoneNumber": "0909090909",
+            "gender": "Female",
+            "age": 25,
+            "job": "Bitch",
+            "favorites": [
+                "an chuoi",
+                "chich",
+                "doggy"
+            ],
+            "avatar": "../img/avatar.jpg"
+        }
+    ],
+    "account": [
+        {
+            "user_id": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+            "userName": "admin",
+            "password": "P@ssword123",
+            "role": "Administrator"
+        }
+    ],
+    "developer": [
+        {
+            "user_id": "2a6424fd-471f-3532-c620-c1c1c78e29b0",
+            "position": "FrontEnd",
+            "projects": [
+                "projectId_1",
+                "projectId_2"
+            ],
+            "description": "",
+            "skills": [
+                "Angular",
+                "NodeJS"
+            ],
+            "company": [
+                {
+                    "company": "DXC",
+                    "months": "18",
+                    "position": "FrontEnd",
+                    "description": ""
+                }
+            ]
+        }
+    ]
+}
