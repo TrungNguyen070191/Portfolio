@@ -9,7 +9,7 @@ import { TimeAgoPipe } from 'time-ago-pipe';
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule
   ],
   declarations: [
     BlogListComponent,

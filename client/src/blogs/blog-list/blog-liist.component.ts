@@ -4,7 +4,7 @@ import { Post } from '@providers/models/post';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'tekbar-blog-list',
+  selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.scss']
 })
@@ -31,7 +31,7 @@ export class BlogListComponent implements OnInit {
   GetBlogList() {
     if (this.blogs) {
       console.log(this.blogs);
-      this.keys = Object.keys(this.blogs)
+      this.keys = Object.keys(this.blogs);
       console.log(this.keys);
       console.log(this.filterCategory);
     }
