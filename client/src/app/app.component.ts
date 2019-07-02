@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+  subscription;
+  constructor(
+    private router: Router
+  ) {
+    this.subscription = router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        if (event.url === '/') {
+          this.router.navigate(['/blogs-list']);
+        }
+      }
+    });
+  }
 }
