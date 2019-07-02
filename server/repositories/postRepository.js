@@ -20,15 +20,28 @@ class PostRepository {
   }
 
   async GetPostById(id) {
-    return await db.GetOneAsync(this.key, { $or: [{ _id: id, show: true }] });
+    return await db.GetOneAsync(this.key, { $or: [{ _id: ObjectId(id), show: true }] });
   }
 
   async UpdatePost(id, data) {
-    return await db.UpdateOneAsync(this.key, { _id: id }, data);
+    return await db.UpdateOneAsync(this.key, { _id: ObjectId(id) }, {$set:{
+      "categoryId": data.categoryId,
+      "userId": data.userId,
+      "title": data.title,
+      "shortDescription": data.shortDescription,
+      "tags": data.tags,
+      "mainImage": data.tags,
+      "imgList": data.imgList,
+      "content": data.content,
+      "comments": data.comments,
+      "show": data.show
+    }});
   }
 
-  async DeletePost(id, data) {
-    return await db.UpdateOneAsync(this.key, { _id: id }, data);
+  async DeletePost(id) {
+    return await db.UpdateOneAsync(this.key, { _id: ObjectId(id) }, {$set:{
+      "show": false
+    }});
   }
 }
 
