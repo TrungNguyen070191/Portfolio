@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GetBlogDetailsService } from '@providers/services';
 
 @Component({
-  selector: 'tekbar-blog-list',
+  selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.scss']
 })
-export class BlogListComponent {
+export class BlogListComponent implements OnInit {
   title = 'films-synopsys';
-  filterCategory = 'hocNghe'
+  filterCategory = 'hocNghe';
   blogs;
   keys;
 
@@ -26,27 +26,24 @@ export class BlogListComponent {
     if (this.blogs) {
       console.log(this.blogs);
 
-      this.keys = Object.keys(this.blogs)
+      this.keys = Object.keys(this.blogs);
 
       console.log(this.keys);
       console.log(this.filterCategory);
     }
 
-    }
-  GetCategory(categoryId : string){
-    const gayNghiep = this.filterCategory ==='gayNghiep' && categoryId ==='gayNghiep';
-    const hocNghe = this.filterCategory ==='hocNghe'&& categoryId ==='hocNghe';
+  }
+  GetCategory(categoryId: string) {
+    const gayNghiep = this.filterCategory === 'gayNghiep' && categoryId === 'gayNghiep';
+    const hocNghe = this.filterCategory === 'hocNghe' && categoryId === 'hocNghe';
     return gayNghiep || hocNghe;
   }
-  ShowCategoty(e : string){
-    if (e === 'gayNghiep')
-    {
+  ShowCategoty(e: string) {
+    if (e === 'gayNghiep') {
       this.filterCategory = 'gayNghiep';
-    }
-    else
-    {
+    } else {
       this.filterCategory = 'hocNghe';
     }
-    }
   }
+}
 
