@@ -11,6 +11,8 @@ const ptfCollectionsName = {
   USER: 'ptf_user',
   POST: 'ipvn_posts'
 };
+
+
 const role = {
   ADMIN: 1,
   USER: 0

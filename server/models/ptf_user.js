@@ -18,10 +18,6 @@ var PTFUserSchema = new Schema({
         trim: true,
         required: true
     },
-    dob: {
-        type: Date,
-        default: Date.now
-    },
     email: {
         type: String,
         trim: true,
@@ -29,6 +25,7 @@ var PTFUserSchema = new Schema({
         unique: true,
         lowercase: true
     },
+    dob: Date,
     phoneNumber: {
         type: String,
         trim: true,
