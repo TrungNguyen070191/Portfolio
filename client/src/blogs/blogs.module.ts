@@ -5,16 +5,20 @@ import { BlogService } from '@providers/services';
 import { FormsModule } from '@angular/forms';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule,
+    MatIconModule
   ],
   declarations: [
     BlogListComponent,
     BlogDetailComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
   ],
   entryComponents: [
     BlogListComponent

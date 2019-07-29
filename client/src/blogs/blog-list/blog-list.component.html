@@ -1,17 +1,38 @@
-<div class="component-content-full">
-  blog list
-</div>
-<button (click)="ShowCategoty('showAll')">Học Nghề Gây Nghiệp</button>
-<button (click)="ShowCategoty('hocNghe')">Học Nghề</button>
-<button (click)="ShowCategoty('gayNghiep')">Gây Nghiệp</button>
-<div *ngFor="let item of blogs">
-  <div class="blog" *ngIf="GetCategory(item.categoryId)" (click)="getPostDetail(item)">
-    <h4>
-      <div>{{item.title}}</div>
-    </h4>
-    <img src="{{item.mainImage}}" alt="">
-    <div>{{item.shortDescription}}</div>
-    <div>{{item.userId}}</div>
-    <div>{{item.createdDate}}</div>
+<div class="content-container">
+  <!-- <div class="header">
+    blog list
+  </div> -->
+  <div class="content">
+    <div class="categorizes" fxLayout="row" fxLayoutAlign="start center">
+      <button (click)="ShowCategoty('showAll')">Học Nghề Gây Nghiệp</button>
+      <button (click)="ShowCategoty('hocNghe')">Học Nghề</button>
+      <button (click)="ShowCategoty('gayNghiep')">Gây Nghiệp</button>
+    </div>
+    <div class="list-blog">
+      <div *ngFor="let item of blogs" class="blog">
+        <div *ngIf="GetCategory(item.categoryId)" (click)="getPostDetail(item)">
+          <h4>
+            <div>{{item.title}}</div>
+          </h4>
+          <img src="{{item.mainImage}}" alt="">
+          <div>{{item.shortDescription}}</div>
+          <div>{{item.userId}}</div>
+          <div>{{item.createdDate}}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer" fxLayout="row" fxLayoutAlign="start center">
+    <div class="footer-logo">Logo</div>
+    <div class="footer-content" fxLayout="column">
+      <div class="footer-header">
+        The Tekbar
+      </div>
+      <div class="footer-sub-header">
+        *slogan*
+      </div>
+    </div>
   </div>
 </div>
