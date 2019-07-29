@@ -4,7 +4,8 @@ import { Post } from '@providers/models/post';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-blog-list',
+  // tslint:disable-next-line:component-selector
+  selector: 'tekbar-blog-list',
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.scss']
 })
@@ -56,7 +57,7 @@ export class BlogListComponent implements OnInit {
 
   getPostDetail(post) {
     const title = this.getBlogDetailService.convertVietNamString(post.title);
-    this.router.navigate(['/blog-detail', title + '_' + post.postId]);
+    this.router.navigate(['/blog-detail/', title + '_' + post.postId]);
   }
 }
 

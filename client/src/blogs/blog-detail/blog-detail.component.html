@@ -1,12 +1,47 @@
-<div class="blog" *ngIf="currentPost">
-  <div (click)="backtoBlogList()"> Back to blog list </div>
-  <h4>
-    <div class="title">{{currentPost.title}}</div>
-  </h4>
-  <div class="author">{{currentPost.userName}} - {{currentPost.createdDate  | timeAgo}}</div>
-  <div class="description">{{currentPost.shortDescription}}</div>
-  <div class="comment" *ngFor="let cmt of currentPost.comments">
-    <div class="author-cmt">{{cmt.userName}} - {{cmt.createdDate  | timeAgo}}</div>
-    <div>{{cmt.text}}</div>
+<div class="content-container">
+  <div class="content">
+    <div class="categorizes" fxLayout="row" fxLayoutAlign="start center">
+      <button>Học Nghề Gây Nghiệp</button>
+      <button>Học Nghề</button>
+      <button>Gây Nghiệp</button>
+    </div>
+    <div class="blog-content">
+      <div class="blog" *ngIf="currentPost" fxLayout="column">
+        <div (click)="backtoBlogList()" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon>keyboard_backspace
+          </mat-icon> Back to blog list
+        </div>
+        <div class="blog-detail">
+          <h4>
+            <div class="title">{{currentPost.title}}</div>
+          </h4>
+          <div class="author">{{currentPost.userName}} - {{currentPost.createdDate  | timeAgo}}</div>
+          <div class="description">
+            <div class="show-content">
+              {{currentPost.shortDescription}}
+            </div>
+          </div>
+          <div class="comment-container">
+            <div class="comment" *ngFor="let cmt of currentPost.comments">
+              <div class="author-cmt">{{cmt.userName}} - {{cmt.createdDate  | timeAgo}}</div>
+              <div>{{cmt.text}}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer" fxLayout="row" fxLayoutAlign="start center">
+    <div class="footer-logo">Logo</div>
+    <div class="footer-content" fxLayout="column">
+      <div class="footer-header">
+        The Tekbar
+      </div>
+      <div class="footer-sub-header">
+        *slogan*
+      </div>
+    </div>
   </div>
 </div>

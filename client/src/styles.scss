@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+@import './app/app.component.scss';
+
+html {
+    box-sizing: border-box;
+    *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.component-content-full {
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    border-top: 2px solid black;
+    height: 100px;
+    padding: 0 120px;
+    .footer-logo {
+        border: 1px solid black;
+        height: 60px;
+        width: 45px;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+    .footer-content {
+        padding-left: 15px;
+        .footer-header {
+            font-weight: 700;
+            font-size: 28px;
+        }
+    }
+}
+
+.content-container {
+    height: 100%;
+    width: 100%;
+
+    .content {
+        width: 100%;
+    }
+
+    .categorizes {
+        height: 60px;
+        padding: 0 120px;
+        border-bottom: 2px solid black;
+
+    }
+}
+
+
